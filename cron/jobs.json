@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "procurement-scan",
+      "name": "Procurement RFQ Scanner",
+      "schedule": "0 8 * * *",
+      "command": "/Users/jpahl/.openclaw/procurement/main.py scan",
+      "description": "Scan NYS Contract Reporter for new IT/software RFQs daily at 8 AM",
+      "enabled": false,
+      "notify": {
+        "channel": "telegram",
+        "onlyOnOutput": true
+      },
+      "state": {
+        "scheduleErrorCount": 3,
+        "lastError": "schedule error: TypeError: Cannot read properties of undefined (reading 'trim')"
+      }
+    }
+  ]
+}

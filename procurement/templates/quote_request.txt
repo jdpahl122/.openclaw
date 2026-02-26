@@ -1,0 +1,27 @@
+Dear {rep_name},
+
+I hope this email finds you well. A Aye Aye LLC is preparing a response to the following procurement opportunity and would like to request pricing from {distributor_name}.
+
+RFQ Reference: {rfq_title}
+CR#: {cr_number}
+Agency: {agency}
+Due Date: {due_date}
+Our Quote Deadline: {quote_deadline}
+
+We are looking for competitive pricing on the following items:
+
+{line_items_table}
+
+Please provide:
+- Unit pricing and extended pricing for each item
+- Any applicable volume discounts
+- Licensing terms (perpetual vs. subscription, if applicable)
+- Lead time / delivery timeline
+- Any current promotions or special pricing programs
+
+We need your quote by {quote_deadline} to allow time for proposal preparation.
+
+Thank you for your prompt attention to this request. Please don't hesitate to reach out if you have any questions.
+
+Best regards,
+A Aye Aye LLC

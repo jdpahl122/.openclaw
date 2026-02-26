@@ -1,0 +1,63 @@
+# ============================================================
+# OpenClaw .gitignore
+# ============================================================
+
+# --- Secrets & credentials ---
+.env
+procurement/.env
+procurement/credentials/
+credentials/
+
+# --- OpenClaw runtime state ---
+openclaw.json
+openclaw.json.bak*
+update-check.json
+agents/
+devices/
+identity/
+logs/
+media/
+memory/
+subagents/
+telegram/
+canvas/
+completions/
+
+# --- Cron runtime state (keep jobs.json, ignore backups) ---
+cron/*.bak
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+*.egg
+
+# --- Databases & runtime state ---
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+workspace/.openclaw/
+
+# --- Procurement runtime data ---
+procurement/data/raw/
+procurement/data/nyscr_session.json
+procurement/data/rfqs.db*
+
+# --- WNY News output ---
+wny_news/output/*.json
+wny_news/output/*.md
+!wny_news/output/.gitkeep
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
