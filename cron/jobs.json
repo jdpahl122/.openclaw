@@ -40,13 +40,13 @@
         "channel": "telegram"
       },
       "state": {
-        "nextRunAtMs": 1772550000000,
-        "lastRunAtMs": 1772548200013,
+        "nextRunAtMs": 1772551800000,
+        "lastRunAtMs": 1772550000077,
         "lastStatus": "ok",
-        "lastDurationMs": 7145,
+        "lastDurationMs": 6025,
         "consecutiveErrors": 0
       },
-      "updatedAtMs": 1772548207158
+      "updatedAtMs": 1772550006102
     }
   ]
 }
