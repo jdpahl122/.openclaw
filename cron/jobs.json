@@ -4,18 +4,49 @@
     {
       "id": "procurement-scan",
       "name": "Procurement RFQ Scanner",
-      "schedule": "0 8 * * *",
-      "command": "/Users/jpahl/.openclaw/procurement/main.py scan",
-      "description": "Scan NYS Contract Reporter for new IT/software RFQs daily at 8 AM",
       "enabled": false,
-      "notify": {
-        "channel": "telegram",
-        "onlyOnOutput": true
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * *"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run the procurement scanner: /Users/jpahl/.openclaw/procurement/main.py scan -- then summarize any new RFQs found."
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram"
+      },
+      "state": {}
+    },
+    {
+      "id": "email-monitor",
+      "name": "Gmail Inbox Monitor",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/30 * * * *"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run the email monitor: {\"command\": \"/Users/jpahl/.openclaw/email_monitor/main.py check\"} -- If the command produces an inbox digest, relay the full digest text exactly as output. If there is no output or no new emails, respond with exactly HEARTBEAT_OK and nothing else."
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram"
       },
       "state": {
-        "scheduleErrorCount": 3,
-        "lastError": "schedule error: TypeError: Cannot read properties of undefined (reading 'trim')"
-      }
+        "nextRunAtMs": 1772550000000,
+        "lastRunAtMs": 1772548200013,
+        "lastStatus": "ok",
+        "lastDurationMs": 7145,
+        "consecutiveErrors": 0
+      },
+      "updatedAtMs": 1772548207158
     }
   ]
 }

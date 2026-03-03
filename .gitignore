@@ -46,6 +46,10 @@ procurement/data/raw/
 procurement/data/nyscr_session.json
 procurement/data/rfqs.db*
 
+# --- Email monitor runtime data ---
+email_monitor/.env
+email_monitor/data/
+
 # --- WNY News output ---
 wny_news/output/*.json
 wny_news/output/*.md

@@ -84,4 +84,27 @@ Example exec tool call: `{ "command": "/Users/jpahl/.openclaw/wny_news/query.py 
 
 ---
 
+## Gmail Email Monitor
+
+Monitors Gmail for unread emails, classifies them by priority (HIGH/MEDIUM/LOW) with body summaries, and can draft, review, and send reply emails. Uses the `gog` CLI for all Gmail operations. Data is processed locally. Drafts include the default email signature.
+
+**Query commands** (use `exec` with `command` parameter):
+
+| User asks | command |
+|-----------|---------|
+| Check inbox / new emails | `/Users/jpahl/.openclaw/email_monitor/query.py check` |
+| Show last digest | `/Users/jpahl/.openclaw/email_monitor/query.py last` |
+| Read a specific email | `/Users/jpahl/.openclaw/email_monitor/query.py show --msg-id MSG_ID` |
+| Draft a reply | `/Users/jpahl/.openclaw/email_monitor/query.py draft --to "email@example.com" --context "reply text" --subject "Re: Subject" --msg-id MSG_ID --thread-id THREAD_ID` |
+| Review a draft before sending | `/Users/jpahl/.openclaw/email_monitor/query.py show-draft --draft-id DRAFT_ID` |
+| Send a draft (marks thread read) | `/Users/jpahl/.openclaw/email_monitor/query.py send --draft-id DRAFT_ID` |
+| Dismiss an email | `/Users/jpahl/.openclaw/email_monitor/query.py dismiss --msg-id MSG_ID` |
+| Monitor status | `/Users/jpahl/.openclaw/email_monitor/query.py status` |
+
+**Draft workflow:** draft → show-draft → send. Always pass `--msg-id` and `--thread-id` when drafting so `send` can mark the original thread as read.
+
+Example exec tool call: `{ "command": "/Users/jpahl/.openclaw/email_monitor/query.py check" }`
+
+---
+
 Add whatever helps you do your job. This is your cheat sheet.
